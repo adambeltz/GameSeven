@@ -6,7 +6,7 @@ import com.badlogic.gdx.utils.Disposable;
 
 public class WorldRenderer implements Disposable{
 
-    private OrthographicCamera camera;
+    public OrthographicCamera camera;
     public SpriteBatch batch;
     public Objects objects;
 
@@ -17,16 +17,18 @@ public class WorldRenderer implements Disposable{
     public void init(){
         batch = new SpriteBatch();
         camera = new OrthographicCamera(Constants.VIEWPORT_WIDTH, Constants.VIEWPORT_HEIGHT * Constants.ASPECT_RATIO);
-        camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight/2f, 0);
+        camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
         objects = new Objects();
         camera.update();
+
     }
 
-    public void render(){
+    public void render(SpriteBatch batch){
         batch.setProjectionMatrix(camera.combined);
         camera.update();
         batch.begin();
         objects.render(batch);
+
         batch.end();
     }
 

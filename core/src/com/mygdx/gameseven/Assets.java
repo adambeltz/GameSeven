@@ -1,6 +1,7 @@
 package com.mygdx.gameseven;
 
 import com.badlogic.gdx.assets.AssetManager;
+import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.utils.Disposable;
 
@@ -11,6 +12,7 @@ public class Assets implements Disposable{
     TextureAtlas.AtlasRegion background;
     TextureAtlas.AtlasRegion brownCat;
     TextureAtlas.AtlasRegion grayCat;
+    Sprite cat;
 
     public Assets() {
         init();
@@ -24,6 +26,7 @@ public class Assets implements Disposable{
         background = textureAtlas.findRegion("blue_background002");
         brownCat = textureAtlas.findRegion("cat_resize");
         grayCat = textureAtlas.findRegion("gray_cat_front200");
+
     }
 
 

@@ -1,0 +1,27 @@
+
+TextureAtlas.png
+size: 4096,2048
+format: RGBA8888
+filter: Nearest,Nearest
+repeat: none
+blue_background002
+  rotate: false
+  xy: 2, 132
+  size: 2662, 1850
+  orig: 2662, 1850
+  offset: 0, 0
+  index: -1
+cat_resize
+  rotate: false
+  xy: 2, 2
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+gray_cat_front200
+  rotate: false
+  xy: 2666, 1782
+  size: 142, 200
+  orig: 142, 200
+  offset: 0, 0
+  index: -1

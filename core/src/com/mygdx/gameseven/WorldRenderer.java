@@ -1,5 +1,6 @@
 package com.mygdx.gameseven;
 
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.utils.Disposable;
@@ -10,20 +11,27 @@ public class WorldRenderer implements Disposable{
     public SpriteBatch batch;
     public Objects objects;
 
+
+
     public WorldRenderer() {
+
         init();
     }
 
     public void init(){
+
         batch = new SpriteBatch();
-        camera = new OrthographicCamera(Constants.VIEWPORT_WIDTH, Constants.VIEWPORT_HEIGHT * Constants.ASPECT_RATIO);
+        camera = new OrthographicCamera(Constants.VIEWPORT_WIDTH, Constants.VIEWPORT_HEIGHT);
         camera.position.set(camera.viewportWidth / 2f, camera.viewportHeight / 2f, 0);
+        Gdx.app.log("Camera Size: ", String.valueOf(camera.viewportWidth) + ", " + String.valueOf(camera
+                .viewportHeight));
         objects = new Objects();
         camera.update();
 
     }
 
-    public void render(SpriteBatch batch){
+    public void render(){
+
         batch.setProjectionMatrix(camera.combined);
         camera.update();
         batch.begin();
@@ -35,5 +43,7 @@ public class WorldRenderer implements Disposable{
     @Override
     public void dispose() {
         batch.dispose();
+
+
     }
 }

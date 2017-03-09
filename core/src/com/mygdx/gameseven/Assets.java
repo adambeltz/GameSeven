@@ -23,7 +23,9 @@ public class Assets implements Disposable{
         assetManager.load("TextureAtlas.atlas", TextureAtlas.class);
         assetManager.finishLoading();
         textureAtlas = assetManager.get("TextureAtlas.atlas");
+
         background = textureAtlas.findRegion("blue_background002");
+
         brownCat = textureAtlas.findRegion("cat_resize");
         grayCat = textureAtlas.findRegion("gray_cat_front200");
 
@@ -38,5 +40,10 @@ public class Assets implements Disposable{
     @Override
     public void dispose() {
         assetManager.dispose();
+        textureAtlas.dispose();
+
     }
+
+
+
 }

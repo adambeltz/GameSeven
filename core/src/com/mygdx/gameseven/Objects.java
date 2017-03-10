@@ -2,6 +2,7 @@ package com.mygdx.gameseven;
 
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.Vector2;
 
 public class Objects {
 
@@ -17,7 +18,7 @@ public class Objects {
     private void init(){
         grayCatSprite = new Sprite(GameSevenMain.assets.getAtlasRegion("gray_cat_front200"));
         grayCatSprite.setPosition(0,0);
-        grayCatSprite.setSize(20,20 * getAspectRatio(grayCatSprite));
+        grayCatSprite.setSize(10,10 * getAspectRatio(grayCatSprite));
 
 
         brownCatSprite = new Sprite(GameSevenMain.assets.brownCat);
@@ -45,4 +46,15 @@ public class Objects {
 
         return aspectRatio;
     }
+
+    public Vector2 getPosition(Sprite sprite){
+        Vector2 vector2 = new Vector2();
+        float x = sprite.getX();
+        float y = sprite.getY();
+        vector2.x = x;
+        vector2.y = y;
+        return vector2;
+
+    }
+
 }

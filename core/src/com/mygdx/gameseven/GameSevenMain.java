@@ -20,7 +20,7 @@ public class GameSevenMain extends ApplicationAdapter {
 
 		// Initialize Renderer and Controller
 		worldController = new WorldController();
-		worldRenderer = new WorldRenderer();
+		worldRenderer = new WorldRenderer(worldController);
 
 	}
 
@@ -34,7 +34,7 @@ public class GameSevenMain extends ApplicationAdapter {
 			create();
 		}
 
-
+		worldController.update(Gdx.graphics.getDeltaTime());
 		Gdx.gl.glClearColor(1, 1, 0, 1);
 		Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 

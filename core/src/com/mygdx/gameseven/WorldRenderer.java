@@ -10,11 +10,13 @@ public class WorldRenderer implements Disposable{
     public OrthographicCamera camera;
     public SpriteBatch batch;
     public Objects objects;
+    WorldController worldController;
 
 
 
-    public WorldRenderer() {
 
+    public WorldRenderer(WorldController worldController) {
+        this.worldController = worldController;
         init();
     }
 
@@ -28,10 +30,12 @@ public class WorldRenderer implements Disposable{
         objects = new Objects();
         camera.update();
 
+
     }
 
     public void render(){
-
+        worldController.applyTo(camera);
+        worldController.applyTo(objects.brownCatSprite);
         batch.setProjectionMatrix(camera.combined);
         camera.update();
         batch.begin();
@@ -46,4 +50,6 @@ public class WorldRenderer implements Disposable{
 
 
     }
+
+
 }
